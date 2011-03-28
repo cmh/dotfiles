@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/chris/.vim'
 let g:netrw_dirhist_2='/home/chris/dev/sdk/main/test'
 let g:netrw_dirhist_3='/home/chris/Dropbox/programming'
+let g:netrw_dirhist_4='/home/chris/dev/sdk/main/test/devicedb/templates'
