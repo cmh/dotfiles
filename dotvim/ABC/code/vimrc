@@ -49,7 +49,8 @@ set binary noeol
 
 " make that backspace key work the way it should
 let mapleader = ","
-colorscheme desert "TODO: wrap this shit in some os/bg/fg specific settings
+colorscheme peachpuff
+"colorscheme sorcerer "TODO: wrap this shit in some os/bg/fg specific settings
 set tags=tags;/
 " This beauty remembers where you were the last time you edited the file, and returns to the same position.
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -79,7 +80,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	" Perforce Settings
 	" {
 		",pe to open for edit
-		map <leader>pe ;!p4 edit "%;p"<CR><CR>
+		map <leader>pe ;!p4 edit "%:p"<CR><CR>
 	" }
 
 	map <leader>ve ;e! ~/.vimrc<cr>
@@ -160,6 +161,11 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	let Tlist_Sort_Type = 'name' "Order by
 " }
 
+" SnipMate Settings
+" {
+	"Reload snippets
+	nnoremap ,smr &lt;esc>:exec ReloadAllSnippets()&lt;cr> 
+" }
 """""""""""""""""""""""""""
 " Language specific options
 """""""""""""""""""""""""""
@@ -190,12 +196,13 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	"
 	"Map compilation to <F7>
 	au FileType python vmap <F7> ;call Python_Eval_VSplit()<cr>  
+	au BufEnter *.py set expandtab
 " }
 
 " Haskell { --Dependent on haskmode (vim)
 " {
 	au BufEnter *.hs,*.lhs compiler ghc
-	autocmd FileType haskell map <buffer> <leader><space> ;w!<cr>;!ghc --make %<cr>;./%<cr>
+	autocmd FileType haskell map <buffer> <leader><space> ;w!<cr>;!cabal install<cr>
 	let g:haddock_browser="/usr/bin/links"
 " }
 
