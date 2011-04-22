@@ -102,8 +102,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	
 	" Make space / shift-space scroll in normal mode
 	" {
-		noremap <S-space> <C-b>
-		noremap <space> <C-f>
+	"	noremap <S-space> <C-b>
+	"	noremap <space> <C-f>
 	" }
 	
 	" Make Arrow Keys Useful Again 
@@ -209,7 +209,3 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 """"""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-
-" Train myself to use ; instead of :
-noremap : <NOP>
-" After everything to not ruin mapped commands
