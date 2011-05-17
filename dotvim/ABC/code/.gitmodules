@@ -37,3 +37,6 @@
 [submodule "bundle/l9"]
 	path = bundle/l9
 	url = https://github.com/slack/vim-l9.git
+[submodule "bundle/shim"]
+	path = bundle/shim
+	url = git://github.com/vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git
