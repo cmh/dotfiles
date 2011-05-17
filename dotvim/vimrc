@@ -202,7 +202,11 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " Haskell { --Dependent on haskmode (vim)
 " {
 	au BufEnter *.hs,*.lhs compiler ghc
-	autocmd FileType haskell map <buffer> <leader><space> ;w!<cr>;!cabal install<cr>
+	autocmd FileType haskell map <buffer> <leader><c> ;w!<cr>;!cabal install<CR>
+	autocmd FileType haskell nmap <buffer> <leader><,> :GhciFile<CR>
+	autocmd FileType haskell nmap <buffer> <leader><r> :GhciReload<CR>
+	autocmd FileType haskell nmap <buffer> <leader><l> :GhciRange<CR>
+	autocmd FileType haskell vmap <buffer> <leader><l> :GhciRange<CR>
 	let g:haddock_browser="/usr/bin/links"
 " }
 
