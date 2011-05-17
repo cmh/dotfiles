@@ -40,3 +40,6 @@
 [submodule "bundle/shim"]
 	path = bundle/shim
 	url = git://github.com/vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git
+[submodule "bundle/hoogle"]
+	path = bundle/hoogle
+	url = https://github.com/Twinside/vim-hoogle.git
