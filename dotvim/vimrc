@@ -103,8 +103,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	
 	" Make space / shift-space scroll in normal mode
 	" {
-		noremap <S-space> <C-b>
-		noremap <space> <C-f>
+	"	noremap <S-space> <C-b>
+	"	noremap <space> <C-f>
 	" }
 	
 	" Make Arrow Keys Useful Again 
@@ -202,7 +202,16 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " Haskell { --Dependent on haskmode (vim)
 " {
 	au BufEnter *.hs,*.lhs compiler ghc
-	autocmd FileType haskell map <buffer> <leader><space> ;w!<cr>;!cabal install<cr>
+	autocmd FileType haskell map <buffer> <leader>c ;w!<cr>;!cabal install<CR>
+
+	autocmd FileType haskell map <buffer> <leader><space> :GhciFile<CR>
+	autocmd FileType haskell map <buffer> <leader>r :GhciReload<CR>
+	autocmd FileType haskell map <buffer> <leader>l :GhciRange<CR>
+	autocmd FileType haskell vmap <buffer> <leader>l :GhciRange<CR>
+
+    autocmd BufNewFile,BufRead *.hs map <buffer> <leader>h :Hoogle 
+    autocmd BufNewFile,BufRead *.hs map <buffer> <leader>hc :HoogleClose<CR>
+    autocmd BufNewFile,BufRead *.hs map <buffer> <leader>hl :HoogleLine<CR>
 	let g:haddock_browser="/usr/bin/links"
 " }
 
@@ -216,7 +225,3 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 """"""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-
-" Train myself to use ; instead of :
-noremap : <NOP>
-" After everything to not ruin mapped commands
