@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/chris/.vim'
-let g:netrw_dirhist_2='/home/chris/dev/sdk/main/test'
-let g:netrw_dirhist_3='/home/chris/Dropbox/programming'
-let g:netrw_dirhist_4='/home/chris/dev/sdk/main/test/devicedb/templates'
-let g:netrw_dirhist_5='/usr/local/home/choldsworth/dev/sdk/main/extensions/s3eIOSZeroConf'
-let g:netrw_dirhist_6='/misc/home/choldsworth/.ssh'
