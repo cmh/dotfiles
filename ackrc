@@ -1,0 +1,4 @@
+--type-set
+icf=.icf,.config.txt
+--type-set
+build=.s,.o,.ii,.vcproj,.orig
