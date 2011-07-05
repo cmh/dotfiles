@@ -1,5 +1,0 @@
-#ignore the backups and temp directories
-backups
-temp
-undodir
-.netrwhist
