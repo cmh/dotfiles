@@ -1,27 +1,30 @@
-[submodule "dotvim/bundle/fugitive"]
-	path = dotvim/bundle/fugitive
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "dotvim/bundle/nerdtree"]
-	path = dotvim/bundle/nerdtree
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-[submodule "dotvim/bundle/taglist"]
-	path = dotvim/bundle/taglist
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
 	url = http://github.com/vim-scripts/taglist.vim.git
-[submodule "dotvim/bundle/haskellmode"]
-	path = dotvim/bundle/haskellmode
+[submodule "vim/bundle/haskellmode"]
+	path = vim/bundle/haskellmode
 	url = http://github.com/ehamberg/haskellmode-vim.git
-[submodule "dotvim/bundle/nerdcommenter"]
-	path = dotvim/bundle/nerdcommenter
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "dotvim/bundle/python"]
-	path = dotvim/bundle/python
+[submodule "vim/bundle/python"]
+	path = vim/bundle/python
 	url = https://github.com/vim-scripts/python.vim.git
-[submodule "dotvim/bundle/snipmate"]
-	path = dotvim/bundle/snipmate
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
-[submodule "dotvim/bundle/shim"]
-	path = dotvim/bundle/shim
+[submodule "vim/bundle/shim"]
+	path = vim/bundle/shim
 	url = git://github.com/vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git
-[submodule "dotvim/bundle/hoogle"]
-	path = dotvim/bundle/hoogle
+[submodule "vim/bundle/hoogle"]
+	path = vim/bundle/hoogle
 	url = https://github.com/Twinside/vim-hoogle.git
+[submodule "vim/bundle/project"]
+	path = vim/bundle/project
+	url = git://github.com/shemerey/vim-project.git
