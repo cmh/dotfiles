@@ -17,12 +17,13 @@ function set_vimrc {
 #Dot files
 set_rc "gitconfig"
 set_rc "ackrc"
-set_rc "irssirc"
+#set_rc "irssirc"
 set_rc "bashrc"
 
 #Directories
 set_rc "vim"
 set_rc "zsh"
+set_rc "terminfo"
 
 #Need to handle vimrc separately
 set_vimrc "vimrc"
