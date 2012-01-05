@@ -19,6 +19,7 @@ set_rc "gitconfig"
 set_rc "ackrc"
 #set_rc "irssirc"
 set_rc "bashrc"
+set_rc "zshrc"
 
 #Directories
 set_rc "vim"
