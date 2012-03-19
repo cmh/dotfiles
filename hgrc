@@ -1,0 +1,27 @@
+[ui]
+username = Chris Holdsworth <chris.holdsworth@lucidmarkets.com>
+merge = bc3m
+
+[extensions]
+record = 
+graphlog = 
+progress =
+color = 
+extdiff = 
+graphlog = 
+highlight = 
+fetch = 
+bookmarks = 
+mq = 
+hgshelve=/opt/lucidlibs/hgshelve/hgshelve.py
+
+[extdiff]
+cmd.bc3 = /usr/bin/bcompare
+opts.bc3 = --lro
+
+[merge-toools]
+bc3m.executable = /usr/bin/bcompare
+bc3m.args = $local $other $base $output --automerge --reviewconflicts --lro --rro --title1="Left Parent" --title2="Right Parent" --title3="Common base" --title4="Merged output"
+bc3m.priority = 1
+bc3m.premerge = True
+bc3m.gui = True
