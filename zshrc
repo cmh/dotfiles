@@ -15,9 +15,17 @@ export ZSH_THEME="jreese"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/aliases.zsh
 
-plugins=(git zsh-syntax-highlighting command-not-found mercurial history-substring-search)
+plugins=(git zsh-syntax-highlighting command-not-found mercurial history-substring-search mercurial)
 
 # Customize to your needs...#
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
 
 alias ack='ack-grep'
+
+#C++ libs
+export STLSOFT=/usr/local/include/stlsoft-1.9.111
+
+export EDITOR=vim
+
+#Work specific zshrc
+source $HOME/dotfiles/zshrc.work

@@ -20,6 +20,7 @@ set_rc "ackrc"
 #set_rc "irssirc"
 set_rc "bashrc"
 set_rc "zshrc"
+set_rc "hgrc"
 
 #Directories
 set_rc "vim"

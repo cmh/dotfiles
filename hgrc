@@ -1,6 +1,6 @@
 [ui]
 username = Chris Holdsworth <chris.holdsworth@lucidmarkets.com>
-merge = bc3m
+merge = bcompare
 
 [extensions]
 record = 

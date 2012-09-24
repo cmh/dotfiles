@@ -28,3 +28,21 @@
 [submodule "vim/bundle/project"]
 	path = vim/bundle/project
 	url = git://github.com/shemerey/vim-project.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/vim-ipython"]
+	path = vim/bundle/vim-ipython
+	url = git://github.com/ivanov/vim-ipython.git
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git
+[submodule "vim/bundle/syntax-sv"]
+	path = vim/bundle/syntax-sv
+	url = git://github.com/vim-scripts/systemverilog.vim--Kher.git
+[submodule "vim/bundle/vimpdb"]
+	path = vim/bundle/vimpdb
+	url = git://github.com/gotcha/vimpdb.git
