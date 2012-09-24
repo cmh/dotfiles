@@ -1,6 +1,7 @@
 [ui]
 username = Chris Holdsworth <chris.holdsworth@lucidmarkets.com>
 merge = bcompare
+ignore = ~/.hgignore
 
 [extensions]
 record = 

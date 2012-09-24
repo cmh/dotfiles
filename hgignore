@@ -1,0 +1,19 @@
+syntax: glob
+
+# Temporary files
+
+
+
+# Compiled Files
+*.o
+*.pyc
+*.gdh
+
+# Python ropeproject
+.ropeproject
+
+# Output files
+nohup.out
+
+# Scons
+.sconsign.dblite

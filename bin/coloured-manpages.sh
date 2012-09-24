@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-sudo apt-get install most
-sudo update-alternatives --config pager
+if [[ ! -d ~/.terminfo ]]; then
+    echo "~/.terminfo does not exist, run ./install_dotfiles.sh first"; exit 1
+fi
+
+cd ~/.terminfo && tic mostlike.txt
