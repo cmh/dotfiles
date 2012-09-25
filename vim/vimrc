@@ -169,6 +169,11 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 " }
+" { Syntastic
+"
+    let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+    let g:syntastic_cpp_check_header = 1
+" }
 """""""""""""""""""""""""""
 " Language specific options
 """""""""""""""""""""""""""
