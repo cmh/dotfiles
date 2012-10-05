@@ -73,8 +73,10 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " {
 	map <leader>p :Project<cr>
 
-	map <leader>ve :e! ~/.vimrc<cr>
+	map <leader>ve :e ~/.vimrc<cr>
 	
+    map <leader>todo :e ~/TODO<cr>
+
 	" ,y to open Yankring
 	map <leader>y :YRShow<CR>
 
@@ -162,6 +164,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     let g:pymode_folding = 0
     let g:pymode_lint_checker = "pyflakes,pymetrics"
     let g:pymode_lint_ignore = "E501, E302"
+    let g:pymode_rope_vim_completion=1
     let g:pymode_rope_extended_complete=1
 " }
 " Supertab settings 
