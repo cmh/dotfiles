@@ -11,3 +11,5 @@ fi
 #hssssssssssss
 alias python=ipython
 alias gst='git status --ignore-submodules=dirty'
+
+alias lr='ls -latrh'
