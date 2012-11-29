@@ -14,7 +14,7 @@ highlight =
 fetch = 
 bookmarks = 
 mq = 
-hgshelve=/opt/lucidlibs/hgshelve/hgshelve.py
+hgext.hgshelve=
 
 [extdiff]
 cmd.bc3 = /usr/bin/bcompare
