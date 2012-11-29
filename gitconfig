@@ -3,3 +3,9 @@
 	email = chrisholdsworth@gmail.com
 [github]
 	user = cmh
+[color]
+    diff = auto
+    status = auto
+    brach = atuo
+[core]
+    editor = vim
