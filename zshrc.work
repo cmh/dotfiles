@@ -1,5 +1,0 @@
-#Work specific shell modifications
-
-PATH=$PATH:/opt/altera/11.1sp1/modelsim_ase/bin:/home/chrish/altera/11.1/quartus/bin:/home/chrish/build/clang+llvm-3.1-x86_64-linux-ubuntu_12.04/bin:/home/chrish/build/ldc-0.9.1-x86_64/bin
-
-PYTHONPATH=/opt/lucidlibs/pythonlibs
