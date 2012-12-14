@@ -177,6 +177,9 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     let g:syntastic_cpp_compiler_options = ' -std=c++0x'
     let g:syntastic_cpp_check_header = 1
 " }
+" { Clang complete
+    let g:clang_user_options = '-std=c++11'
+" }
 """""""""""""""""""""""""""
 " Language specific options
 """""""""""""""""""""""""""
