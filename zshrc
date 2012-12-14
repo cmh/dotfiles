@@ -27,8 +27,10 @@ export STLSOFT=/usr/local/include/stlsoft-1.9.111
 
 export EDITOR=vim
 
-#Work specific zshrc
-source $HOME/dotfiles/zshrc.work
+#Machine specific specific zshrc
+if [[ -f $HOME/.zshrc.local ]]; then
+    source $HOME/.zshrc.local
+fi
 
 #Virtualenv
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 function set_rc {
 	if [[ -z "$1" ]]; then 
@@ -40,6 +40,7 @@ set_rc "clang_complete"
 set_rc "vim"
 set_rc "zsh"
 set_rc "terminfo"
+set_rc "hgext"
 
 #Need to handle vimrc separately
 set_vimrc "vimrc"
