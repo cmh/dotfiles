@@ -34,6 +34,7 @@ set_rc "bashrc"
 set_rc "zshrc"
 set_rc "hgrc"
 set_rc "hgignore"
+set_rc "clang_complete"
 
 #Directories
 set_rc "vim"
