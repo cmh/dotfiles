@@ -17,3 +17,13 @@ nohup.out
 
 # Scons
 .sconsign.dblite
+
+# gradle
+*.gradle
+
+# idea
+.idea
+*.iml
+
+# build
+build/
