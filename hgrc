@@ -4,6 +4,7 @@ merge = bcompare
 ignore = ~/.hgignore
 
 [extensions]
+rebase =
 record = 
 graphlog = 
 progress =
