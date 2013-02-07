@@ -15,7 +15,12 @@ export ZSH_THEME="jreese"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/aliases.zsh
 
-plugins=(git zsh-syntax-highlighting command-not-found mercurial history-substring-search mercurial)
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
+
+
+plugins=(git zsh-syntax-highlighting command-not-found mercurial history-substring-search mercurial gradle)
 
 # Customize to your needs...#
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
