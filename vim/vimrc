@@ -87,8 +87,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	" ,d to open nerd tree
 	map <leader>d <ESC>:NERDTreeToggle<CR>
 
-	" ,f to open CommandT
-	map <leader>f <ESC>:CommandT<CR>
+	" ,f to open CtrlP
+	map <leader>f <ESC>:CtrlP<CR>
 
 	set pastetoggle=<F12> "Turn of indentation when pasting multiple lines
 
@@ -187,6 +187,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     let g:clang_complete_copen = 1
     let g:clang_complete_open = 1
 " }
+
 """""""""""""""""""""""""""
 " Language specific options
 """""""""""""""""""""""""""
