@@ -64,3 +64,9 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/cpp11-syntax"]
+	path = vim/bundle/cpp11-syntax
+	url = https://github.com/vim-scripts/Cpp11-Syntax-Support
+[submodule "vim/bundle/cpp-stl-syntax"]
+	path = vim/bundle/cpp-stl-syntax
+	url = git://github.com/vim-scripts/STL-Syntax.git
