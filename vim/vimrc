@@ -87,6 +87,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 	" ,d to open nerd tree
 	map <leader>d <ESC>:NERDTreeToggle<CR>
 
+    let g:jedi#get_definition_command = "<leader>gd"
+
 	" ,f to open CtrlP
 	map <leader>f <ESC>:CtrlP<CR>
 
@@ -176,7 +178,9 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " { Syntastic
 "
     let g:syntastic_cpp_compiler_options = '-std=c++0x'
-    " let g:syntastic_cpp_check_header = 1
+    let g:syntastic_mode_map =  { 'mode' : 'active',
+                                \ 'active_filetypes' : [],
+                                \ 'passive_filetypes' : ['cpp', 'c'] }
 " }
 " { Clang complete
     let g:clang_use_library = 1
@@ -186,6 +190,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     let g:clang_complete_auto = 0
     let g:clang_complete_copen = 1
     let g:clang_complete_open = 1
+    let g:clang_snippets_engine='clang_complete'
 " }
 
 """""""""""""""""""""""""""
