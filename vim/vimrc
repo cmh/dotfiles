@@ -29,9 +29,9 @@ set nocompatible
 	set clipboard+=unnamed "share windows clipboard	
 	set fileformats=unix,dos,mac "support all 3, in this order
 	set noerrorbells
-	set wildmenu " turn on command line completion wild stlye
 	set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png,*.hi
-	set wildmode=list:longest
+	set wildmode=longest,list,full
+	set wildmenu " turn on command line completion wild stlye
 " }
 
 filetype plugin indent on "load filetype plugins/indent settings
@@ -174,6 +174,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " {
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+    let g:SuperTabLongestEnhanced = 1
+    
 " }
 " { Syntastic
 "
@@ -182,15 +184,35 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
                                 \ 'active_filetypes' : [],
                                 \ 'passive_filetypes' : ['cpp', 'c'] }
 " }
+" { NeoComplCache
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_auto_select = 0
+    let g:neocomplcache_enable_fuzzy_completion = 1
+    let g:neocomplcache_force_overwrite_completefunc = 1
+    let g:neocomplcache_snippets_disable_runtime_snippets = 1
+    let g:neocomplcache_plugin_disable = { 'snippets_complete':1 }
+    let g:neocomplcache_enable_prefetch = 1
+    let g:neocomplcache_fuzzy_completion_start_length = 2
+    if !exists('g:neocomplcache_force_omni_patterns')
+          let g:neocomplcache_force_omni_patterns = {}
+    endif
+    let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->:digit:\)'
+    let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|:digit:->\)\|\h\w*::'
+    set completeopt=longest,menu
+    imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+    " au BufEnter *.cpp,*.c,*.h,*.hpp let g:neocomplcache_force_omni_patterns = 1
+" }
 " { Clang complete
     let g:clang_use_library = 1
     let g:clang_library_path = '/usr/local/lib'
     let g:clang_user_options = '-std=c++11'
     let g:clang_auto_select = 0
-    let g:clang_complete_auto = 0
+    let g:clang_complete_auto = 1
     let g:clang_complete_copen = 1
     let g:clang_complete_open = 1
-    let g:clang_snippets_engine='clang_complete'
+    let g:clang_auto_user_options=''
+    let g:clang_memory_percent=70
+    let g:clang_snippets_engine='ultisnips'
 " }
 
 """""""""""""""""""""""""""
