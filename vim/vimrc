@@ -45,8 +45,9 @@ syntax on          "turn syntax highlighting on by default
 " }
 
 let mapleader = ","
-set background=dark
-colorscheme peachpuff
+set background=dark " konsole doesn't work this our correctly
+set t_Co=256 " assume we are in konsole (or any emulator with 256 support)
+colorscheme jellybeans
 
 "colorscheme sorcerer "TODO: wrap this shit in some os/bg/fg specific settings
 set tags=tags;/

@@ -61,3 +61,9 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim
+[submodule "vim/bundle/csapprox"]
+	path = vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule "vim/bundle/colorscheme-jellybeans"]
+	path = vim/bundle/colorscheme-jellybeans
+	url = git://github.com/nanotech/jellybeans.vim.git
