@@ -1,7 +1,7 @@
 " Pathogen - needed before other files
-" {	
-	call pathogen#infect()
-	call pathogen#helptags()
+" { 
+    call pathogen#infect()
+    call pathogen#helptags()
 " }
 
 " turn off compatibility with the old vi
@@ -9,29 +9,30 @@ set nocompatible
 
 " Tab/Indentation
 " {
-	set tabstop=4      "An indentation level every four columns"
-	set softtabstop=4  "Vim treats tab as 4 spaces, but respects hard tabs"
-	set expandtab      "Convert all tabs typed into spaces"
-	set smarttab
-	set shiftwidth=4   "Indent/outdent by four columns"
-	set shiftround     "Always indent/outdent to the nearest tabstop"
-	set autoindent     "auto-indenting for programming languages
-	set formatoptions=rq "Automatically insert comment leader on return, and let gp format comments
-	set ignorecase
-	set infercase
-	set smartcase
+    set tabstop=4      "An indentation level every four columns"
+    set softtabstop=4  "Vim treats tab as 4 spaces, but respects hard tabs"
+    set expandtab      "Convert all tabs typed into spaces"
+    set smarttab
+    set shiftwidth=4   "Indent/outdent by four columns"
+    set shiftround     "Always indent/outdent to the nearest tabstop"
+    set autoindent     "auto-indenting for programming languages
+    set formatoptions=rq "Automatically insert comment leader on return, and let gp format comments
+    set ignorecase
+    set infercase
+    set smartcase
 " }
 
 " General
 " {
-	"set autochdir "Having this set hampers the utility of CommandT
-	set backspace=indent,eol,start
-	set clipboard+=unnamed "share windows clipboard	
-	set fileformats=unix,dos,mac "support all 3, in this order
-	set noerrorbells
-	set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png,*.hi
-	set wildmode=longest,list,full
-	set wildmenu " turn on command line completion wild stlye
+    "set autochdir "Having this set hampers the utility of CommandT
+    set number
+    set backspace=indent,eol,start
+    set clipboard+=unnamed "share windows clipboard 
+    set fileformats=unix,dos,mac "support all 3, in this order
+    set noerrorbells
+    set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png,*.hi
+    set wildmode=longest,list,full
+    set wildmenu " turn on command line completion wild stlye
 " }
 
 filetype plugin indent on "load filetype plugins/indent settings
@@ -40,8 +41,8 @@ syntax on          "turn syntax highlighting on by default
 
 " automatically show matching brackets. works like it does in bbedit.
 " {
-	set showmatch
-	set showcmd
+    set showmatch
+    set showcmd
 " }
 
 let mapleader = ","
@@ -57,83 +58,83 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " UI Options
 " {
-	if has('cmdline_info')
-		set ruler "turn the ruler on
-		set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-		set showcmd "show partial commands in the status line
-	endif
+    if has('cmdline_info')
+        set ruler "turn the ruler on
+        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+        set showcmd "show partial commands in the status line
+    endif
 
-	if has('statusline')
-		set laststatus=1 
-		set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-	endif
+    if has('statusline')
+        set laststatus=1 
+        set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+    endif
 " }
 
 " Custom commands
 " {
-	map <leader>p :Project<cr>
+    map <leader>p :Project<cr>
 
-	map <leader>ve :e ~/.vimrc<cr> 
-	
+    map <leader>ve :e ~/.vimrc<cr> 
+    
     map <leader>todo :e ~/TODO<cr>
 
     map <leader>ll :call g:ClangUpdateQuickFix()<CR>
 
-	" ,y to open Yankring
-	map <leader>y :YRShow<CR>
+    " ,y to open Yankring
+    map <leader>y :YRShow<CR>
 
-	" ,t to open taglist
-	nmap <leader>t :TlistToggle<CR>
+    " ,t to open taglist
+    nmap <leader>t :TlistToggle<CR>
 
-	" ,d to open nerd tree
-	map <leader>d <ESC>:NERDTreeToggle<CR>
+    " ,d to open nerd tree
+    map <leader>d <ESC>:NERDTreeToggle<CR>
 
     let g:jedi#get_definition_command = "<leader>gd"
 
-	" ,f to open CtrlP
-	map <leader>f <ESC>:CtrlP<CR>
+    " ,f to open CtrlP
+    map <leader>f <ESC>:CtrlP<CR>
 
-	set pastetoggle=<F12> "Turn of indentation when pasting multiple lines
+    set pastetoggle=<F12> "Turn of indentation when pasting multiple lines
 
-	cmap <leader>sudow w !sudo tee %<CR><CR> 
-	
-	" Make Arrow Keys Useful Again 
-	" {
-		map <down> <ESC>:bn<RETURN>
-		"map <left> <ESC>;NERDTreeToggle<RETURN>
-		"map <right> <ESC>;Tlist<RETURN>
-		map <up> <ESC>:bp<RETURN>
-	" }
-	
-	" Emacs like bindings for the command line
-	" {
-		cnoremap <C-A>		<Home>
-		cnoremap <C-E>		<End>
-		cnoremap <C-K>		<C-U>
-		cnoremap <C-P>		<Up>
-		cnoremap <C-N>		<Down>
-	" }
-	
-	" Smart movement between windows
-	" {
-		map <C-j> <C-W>j
-		map <C-k> <C-W>k
-		map <C-h> <C-W>h
-		map <C-l> <C-W>l	
-	" }
-	
+    map <leader>sudow w !sudo tee %<CR><CR> 
+    
+    " Make Arrow Keys Useful Again 
+    " {
+        map <down> <ESC>:bn<RETURN>
+        "map <left> <ESC>;NERDTreeToggle<RETURN>
+        "map <right> <ESC>;Tlist<RETURN>
+        map <up> <ESC>:bp<RETURN>
+    " }
+    
+    " Emacs like bindings for the command line
+    " {
+        cnoremap <C-A>      <Home>
+        cnoremap <C-E>      <End>
+        cnoremap <C-K>      <C-U>
+        cnoremap <C-P>      <Up>
+        cnoremap <C-N>      <Down>
+    " }
+    
+    " Smart movement between windows
+    " {
+        map <C-j> <C-W>j
+        map <C-k> <C-W>k
+        map <C-h> <C-W>h
+        map <C-l> <C-W>l    
+    " }
+    
 " }
 
 
 " Backups
 " {
-	set backup
-	silent !mkdir $HOME/.vim/backups > /dev/null 2>&1
-	set backupdir=$HOME/.vim/backups " where to put backup file
-	silent !mkdir $HOME/.vim/temp > /dev/null 2>&1
-	set directory=$HOME/.vim/temp " directory is the directory for temp file
-	silent !mkdir $HOME/.vim/undodir > /dev/null 2>&1
-	set makeef=error.err " When using make, where should it dump the file
+    set backup
+    silent !mkdir $HOME/.vim/backups > /dev/null 2>&1
+    set backupdir=$HOME/.vim/backups " where to put backup file
+    silent !mkdir $HOME/.vim/temp > /dev/null 2>&1
+    set directory=$HOME/.vim/temp " directory is the directory for temp file
+    silent !mkdir $HOME/.vim/undodir > /dev/null 2>&1
+    set makeef=error.err " When using make, where should it dump the file
 " }
 " Undo File
 " {
@@ -149,17 +150,17 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " TagList Settings 
 " {
-	let Tlist_Auto_Open=0 "Let the taglist open automatically
-	let Tlist_Compact_Format = 1 "Show small menu
-	let Tlist_Ctags_Cmd = 'ctags' "Location of ctags
-	let Tlist_Exist_OnlyWindow = 1 "If you are the last, kill yourself
-	let Tlist_Sort_Type = 'name' "Order by
+    let Tlist_Auto_Open=0 "Let the taglist open automatically
+    let Tlist_Compact_Format = 1 "Show small menu
+    let Tlist_Ctags_Cmd = 'ctags' "Location of ctags
+    let Tlist_Exist_OnlyWindow = 1 "If you are the last, kill yourself
+    let Tlist_Sort_Type = 'name' "Order by
 " }
 
 " SnipMate Settings
 " {
-	"Reload snippets
-	nnoremap ,smr &lt;esc>:exec ReloadAllSnippets()&lt;cr> 
+    "Reload snippets
+    nnoremap ,smr &lt;esc>:exec ReloadAllSnippets()&lt;cr> 
 " }
 
 " Python-mode settings
@@ -215,6 +216,9 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     let g:clang_memory_percent=70
     let g:clang_snippets_engine='ultisnips'
 " }
+" { Vim-Jedi
+    let g:jedi#popup_on_dot = 0
+" }
 
 """""""""""""""""""""""""""
 " Language specific options
@@ -228,9 +232,9 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " Python
 " {
-	"Map compilation to <F7>
-	au FileType python vmap <F7> :call Python_Eval_VSplit()<cr>  
-	au BufEnter *.py set expandtab
+    "Map compilation to <F7>
+    au FileType python vmap <F7> :call Python_Eval_VSplit()<cr>  
+    au BufEnter *.py set expandtab
 " }
 
 " Scons
@@ -240,18 +244,18 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " Haskell { --Dependent on haskmode (vim)
 " {
-	au BufEnter *.hs,*.lhs compiler ghc
-	autocmd FileType haskell map <buffer> <leader>c :w!<cr>:!cabal install<CR>
+    au BufEnter *.hs,*.lhs compiler ghc
+    autocmd FileType haskell map <buffer> <leader>c :w!<cr>:!cabal install<CR>
 
-	autocmd FileType haskell map <buffer> <leader><space> :GhciFile<CR>
-	autocmd FileType haskell map <buffer> <leader>r :GhciReload<CR>
-	autocmd FileType haskell map <buffer> <leader>l :GhciRange<CR>
-	autocmd FileType haskell vmap <buffer> <leader>l :GhciRange<CR>
+    autocmd FileType haskell map <buffer> <leader><space> :GhciFile<CR>
+    autocmd FileType haskell map <buffer> <leader>r :GhciReload<CR>
+    autocmd FileType haskell map <buffer> <leader>l :GhciRange<CR>
+    autocmd FileType haskell vmap <buffer> <leader>l :GhciRange<CR>
 
     autocmd BufNewFile,BufRead *.hs map <buffer> <leader>h :Hoogle 
     autocmd BufNewFile,BufRead *.hs map <buffer> <leader>hc :HoogleClose<CR>
     autocmd BufNewFile,BufRead *.hs map <buffer> <leader>hl :HoogleLine<CR>
-	let g:haddock_browser="x-www-browser"
+    let g:haddock_browser="x-www-browser"
 " }
 
 " Verilog {
