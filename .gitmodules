@@ -67,3 +67,6 @@
 [submodule "vim/bundle/colorscheme-jellybeans"]
 	path = vim/bundle/colorscheme-jellybeans
 	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "liquidprompt"]
+	path = liquidprompt
+	url = git://github.com/nojhan/liquidprompt.git

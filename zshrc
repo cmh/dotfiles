@@ -11,6 +11,7 @@ export ZSH_THEME="jreese"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
+source $HOME/dotfiles/liquidprompt/liquidprompt
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/aliases.zsh

@@ -35,6 +35,7 @@ set_rc "zshrc"
 set_rc "hgrc"
 set_rc "hgignore"
 set_rc "clang_complete"
+set_rc "liquidpromptrc"
 
 #Directories
 set_rc "vim"
