@@ -227,7 +227,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " C/C++
 " {
-    map <F5> :make <bar> copen <CR>
+    map <F5> :make -j3 <bar> copen <CR>
     au BufEnter *.cpp,*.c,*.h,*.hpp map <leader>r :noautocmd :execute "vimgrep /" . expand("<cword>") ."/j **/*.{c,h,cpp,hpp}" <Bar> cw <CR>
 " }
 
