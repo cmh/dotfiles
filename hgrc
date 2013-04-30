@@ -4,6 +4,8 @@ merge = bcompare
 ignore = ~/.hgignore
 
 [extensions]
+collapse=~/.hgext/collapse.py
+hgext.hgshelve=~/.hgext/hgshelve.py
 rebase =
 record = 
 graphlog = 
@@ -15,11 +17,11 @@ highlight =
 fetch = 
 bookmarks = 
 mq = 
-hgext.hgshelve=~/.hgext/hgshelve.py
+purge =
 
 [extdiff]
-cmd.bc3 = /usr/bin/bcompare
-opts.bc3 = --lro
+cmd.bc = /usr/bin/bcompare
+opts.bc = --lro
 
 [merge-toools]
 bc3m.executable = /usr/bin/bcompare
@@ -27,3 +29,6 @@ bc3m.args = $local $other $base $output --automerge --reviewconflicts --lro --rr
 bc3m.priority = 1
 bc3m.premerge = True
 bc3m.gui = True
+
+[diff]
+git = True
