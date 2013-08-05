@@ -18,6 +18,7 @@ fetch =
 bookmarks = 
 mq = 
 purge =
+histedit = 
 
 [extdiff]
 cmd.bc = /usr/bin/bcompare
@@ -32,3 +33,7 @@ bc3m.gui = True
 
 [diff]
 git = True
+
+[alias]
+untrack = rm -Af
+qstatus = status --rev -2:.
