@@ -76,3 +76,9 @@
 [submodule "vim/bundle/vim-protobuf"]
 	path = vim/bundle/vim-protobuf
 	url = git://github.com/uarun/vim-protobuf.git
+[submodule "vim/bundle/pyclewn"]
+	path = vim/bundle/pyclewn
+	url = git://github.com/xieyu/pyclewn.git
+[submodule "vim/bundle/coveragepy"]
+	path = vim/bundle/coveragepy
+	url = git://github.com/alfredodeza/coveragepy.vim.git
