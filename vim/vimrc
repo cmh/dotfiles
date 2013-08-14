@@ -114,6 +114,9 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
         "map <right> <ESC>;Tlist<RETURN>
         map <up> <ESC>:bp<RETURN>
     " }
+
+    " remap Y to behave like D
+    nnoremap Y y$ 
     
     " Emacs like bindings for the command line
     " {
@@ -193,9 +196,11 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
 " { Syntastic
 "
     let g:syntastic_cpp_compiler_options = '-std=c++0x'
-    let g:syntastic_mode_map =  { 'mode' : 'active',
-                                \ 'active_filetypes' : [],
-                                \ 'passive_filetypes' : ['cpp', 'c'] }
+    let g:syntastic_python_pylint_args = '-d C0103 -d C0301 -f parseable -r n -i y'
+    let g:syntastic_cpp_config_file = '.clang_complete'
+    "let g:syntastic_mode_map =  { 'mode' : 'active',
+                                "\ 'active_filetypes' : [],
+                                "\ 'passive_filetypes' : ['cpp', 'c'] }
 " }
 " { NeoComplCache
     let g:neocomplcache_enable_at_startup = 1
