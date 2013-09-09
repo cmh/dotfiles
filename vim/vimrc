@@ -25,7 +25,8 @@ set nocompatible
 " General
 " {
     "set autochdir "Having this set hampers the utility of CommandT
-    set number
+    set hidden
+    set relativenumber
     set hlsearch
     set backspace=indent,eol,start
     set clipboard+=unnamed "share windows clipboard 
@@ -98,7 +99,7 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
     " ,d to open nerd tree
     map <leader>d <ESC>:NERDTreeToggle<CR>
 
-    let g:jedi#get_definition_command = "<leader>gd"
+    let g:jedi#goto_definitions_command = "<leader>gd"
 
     " ,f to open CtrlP
     map <leader>f <ESC>:CtrlP<CR>
@@ -228,12 +229,17 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
     let g:clang_complete_auto = 1
     let g:clang_complete_copen = 1
     let g:clang_complete_open = 1
-    let g:clang_auto_user_options='path, .clang_complete'
+    let g:clang_auto_user_options='path,compile_commands.json,.clang_complete'
     let g:clang_memory_percent=70
     let g:clang_snippets_engine='ultisnips'
 " }
 " { Vim-Jedi
     let g:jedi#popup_on_dot = 0
+" }
+" { CtrlP
+    let g:ctrlp_custom_ignore = {
+    \ 'dir' : 'build$',
+    \ }
 " }
 
 """""""""""""""""""""""""""
