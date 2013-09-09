@@ -12,7 +12,9 @@ plugins=(git zsh-syntax-highlighting command-not-found mercurial \
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/aliases.zsh
+
 unsetopt AUTO_NAME_DIRS
+unsetopt correct_all
 
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
