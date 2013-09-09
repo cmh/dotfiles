@@ -19,17 +19,14 @@ bookmarks =
 mq = 
 purge =
 histedit = 
+convert =
 
-[extdiff]
-cmd.bc = /usr/bin/bcompare
-opts.bc = --lro
-
-[merge-toools]
-bc3m.executable = /usr/bin/bcompare
-bc3m.args = $local $other $base $output --automerge --reviewconflicts --lro --rro --title1="Left Parent" --title2="Right Parent" --title3="Common base" --title4="Merged output"
-bc3m.priority = 1
-bc3m.premerge = True
-bc3m.gui = True
+[merge-tools]
+bcompare.args=$local $other $base -mergeoutput=$output -ro -lefttitle=parent1 -centertitle=base -righttitle=parent2 -outputtitle=merged -automerge -reviewconflicts -solo
+bcompare.priority = -1
+bcompare.premerge = False 
+bcompare.gui = True
+bcompare.diffargs=-lro -lefttitle='$plabel1' -righttitle='$clabel' -solo -expandall $parent $child
 
 [diff]
 git = True
