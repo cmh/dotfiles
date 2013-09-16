@@ -1,11 +1,42 @@
-" Pathogen - needed before other files
-" { 
-    call pathogen#infect()
-    call pathogen#helptags()
-" }
-
 " turn off compatibility with the old vi
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'vim-scripts/taglist.vim.git'
+Bundle 'ehamberg/haskellmode-vim.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git'
+Bundle 'Twinside/vim-hoogle.git'
+Bundle 'shemerey/vim-project.git'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'ervandew/supertab.git'
+Bundle 'vim-scripts/systemverilog.vim--Kher.git'
+Bundle 'gotcha/vimpdb.git'
+Bundle 'godlygeek/tabular.git'
+Bundle 'Rip-Rip/clang_complete.git'
+Bundle 'vim-scripts/scons.vim'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'vim-scripts/Cpp11-Syntax-Support'
+Bundle 'vim-scripts/STL-Syntax.git'
+Bundle 'vim-scripts/UltiSnips.git'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'rking/ag.vim'
+Bundle 'godlygeek/csapprox.git'
+Bundle 'nanotech/jellybeans.vim.git'
+Bundle 'nojhan/liquidprompt.git'
+Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'uarun/vim-protobuf.git'
+Bundle 'xieyu/pyclewn.git'
+Bundle 'alfredodeza/coveragepy.vim.git'
+
+filetype plugin indent on
 
 " Tab/Indentation
 " {
