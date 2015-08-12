@@ -18,7 +18,7 @@ fetch =
 bookmarks = 
 mq = 
 purge =
-histedit = 
+#histedit = 
 convert =
 
 [merge-tools]

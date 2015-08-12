@@ -21,8 +21,8 @@ zstyle ':completion:*:manuals.*'  insert-sections   true
 zstyle ':completion:*:man:*'      menu yes select
 
 #set -o vi
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin
-export EDITOR=vim
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin:$HOME/opt/bin
+export EDITOR=$(which vim)
 
 #Machine specific specific zshrc
 if [[ -f $HOME/.zshrc.local ]]; then

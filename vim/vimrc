@@ -16,25 +16,25 @@ Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git'
 Bundle 'Twinside/vim-hoogle.git'
 Bundle 'shemerey/vim-project.git'
 Bundle 'scrooloose/syntastic.git'
-Bundle 'ervandew/supertab.git'
 Bundle 'vim-scripts/systemverilog.vim--Kher.git'
 Bundle 'gotcha/vimpdb.git'
 Bundle 'godlygeek/tabular.git'
-Bundle 'Rip-Rip/clang_complete.git'
 Bundle 'vim-scripts/scons.vim'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'vim-scripts/Cpp11-Syntax-Support'
 Bundle 'vim-scripts/STL-Syntax.git'
-Bundle 'vim-scripts/UltiSnips.git'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'rking/ag.vim'
 Bundle 'godlygeek/csapprox.git'
 Bundle 'nanotech/jellybeans.vim.git'
 Bundle 'nojhan/liquidprompt.git'
-Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'fatih/vim-go.git'
 Bundle 'uarun/vim-protobuf.git'
-Bundle 'xieyu/pyclewn.git'
 Bundle 'alfredodeza/coveragepy.vim.git'
+Bundle 'bling/vim-airline'
+Bundle 'wting/rust.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'rdnetto/YCM-Generator'
 
 filetype plugin indent on
 
@@ -234,22 +234,25 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
                                 "\ 'active_filetypes' : [],
                                 "\ 'passive_filetypes' : ['cpp', 'c'] }
 " }
+" { YCM
+    let g:ycm_confirm_extra_conf = 0
+" }
 " { NeoComplCache
-    let g:neocomplcache_enable_at_startup = 1
-    let g:neocomplcache_enable_auto_select = 0
-    let g:neocomplcache_enable_fuzzy_completion = 1
-    let g:neocomplcache_force_overwrite_completefunc = 1
-    let g:neocomplcache_snippets_disable_runtime_snippets = 1
-    let g:neocomplcache_plugin_disable = { 'snippets_complete':1 }
-    let g:neocomplcache_enable_prefetch = 1
-    let g:neocomplcache_fuzzy_completion_start_length = 2
-    if !exists('g:neocomplcache_force_omni_patterns')
-          let g:neocomplcache_force_omni_patterns = {}
-    endif
-    let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->:digit:\)'
-    let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|:digit:->\)\|\h\w*::'
-    set completeopt=longest,menu
-    imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+    "let g:neocomplcache_enable_at_startup = 1
+    "let g:neocomplcache_enable_auto_select = 0
+    "let g:neocomplcache_enable_fuzzy_completion = 1
+    "let g:neocomplcache_force_overwrite_completefunc = 1
+    "let g:neocomplcache_snippets_disable_runtime_snippets = 1
+    "let g:neocomplcache_plugin_disable = { 'snippets_complete':1 }
+    "let g:neocomplcache_enable_prefetch = 1
+    "let g:neocomplcache_fuzzy_completion_start_length = 2
+    "if !exists('g:neocomplcache_force_omni_patterns')
+          "let g:neocomplcache_force_omni_patterns = {}
+    "endif
+    "let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->:digit:\)'
+    "let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|:digit:->\)\|\h\w*::'
+    "let g:neocomplcache_force_omni_patterns.go = '\h\w*\.\?'
+    "imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
     " au BufEnter *.cpp,*.c,*.h,*.hpp let g:neocomplcache_force_omni_patterns = 1
 " }
 " { Clang complete
@@ -317,6 +320,9 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
     au BufEnter *.v,*.sv set softtabstop=3
     au BufEnter *.v set syntax=verilog
     au BufEnter *.sv set syntax=sv
+" }
+" Markdown {
+    au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 " }
 
 """"""""""""""""""""""""""""
