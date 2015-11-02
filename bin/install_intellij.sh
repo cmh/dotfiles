@@ -40,6 +40,6 @@ DESK=/usr/share/applications/IDEA.desktop
 
 # Add desktop shortcut
 echo -e "[Desktop Entry]\nEncoding=UTF-8\nName=IntelliJ IDEA\nComment=IntelliJ IDEA\nExec=${BIN}/idea.sh\nIcon=${BIN}/idea.png\nTerminal=false\nStartupNotify=true\nType=Application" > ${DESK}
-echo "export \$PATH=$BIN:\$PATH" >>$HOME/.zshrc.local
+echo "export \PATH=$BIN:\$PATH" >>$HOME/.zshrc.local
 
 echo "Done."
