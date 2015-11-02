@@ -10,12 +10,10 @@ if [[ -d ~/.terminfo/m ]]; then
     alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
 fi
 
-#hssssssssssss
-alias python=ipython
 alias gst='git status --ignore-submodules=dirty'
 
 alias lr='ls -latrh'
 
-function uts {
-    date -ud "@${1}"
+function utc {
+    date -ud "@${1}" +"%Y-%m-%d %H:%M:%S.%N"
 }
