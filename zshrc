@@ -8,7 +8,7 @@ else
 fi
 
 plugins=(git zsh-syntax-highlighting command-not-found mercurial \
-         history-substring-search mercurial gradle pip debian)
+         history-substring-search mercurial gradle pip debian fabric)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/aliases.zsh
