@@ -36,6 +36,7 @@ set_rc "hgrc"
 set_rc "hgignore"
 set_rc "clang_complete"
 set_rc "liquidpromptrc"
+set_rc "tmux.conf"
 
 #Directories
 set_rc "vim"
