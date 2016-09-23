@@ -13,7 +13,7 @@ fi
 
 # Fetch the most recent community edition URL
 #URL=$(wget "http://www.jetbrains.com/idea/download/download_thanks.jsp?edition=I${ed}&os=linux" -qO- | grep -o -m 1 "http://download.jetbrains.com/idea/.*gz")
-URL=http://download.jetbrains.com/idea/ideaIC-14.1.4.tar.gz
+URL=http://download.jetbrains.com/idea/ideaIC-15.0.3.tar.gz
 
 # Truncate filename
 FILE=$(basename ${URL})
@@ -40,6 +40,6 @@ DESK=/usr/share/applications/IDEA.desktop
 
 # Add desktop shortcut
 echo -e "[Desktop Entry]\nEncoding=UTF-8\nName=IntelliJ IDEA\nComment=IntelliJ IDEA\nExec=${BIN}/idea.sh\nIcon=${BIN}/idea.png\nTerminal=false\nStartupNotify=true\nType=Application" > ${DESK}
-echo "export \PATH=$BIN:\$PATH" >>$HOME/.zshrc.local
+echo "export PATH=$BIN:\$PATH" >>$HOME/.zshrc.local
 
 echo "Done."

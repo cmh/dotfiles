@@ -35,6 +35,10 @@ Bundle 'bling/vim-airline'
 Bundle 'wting/rust.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
+Bundle 'ternjs/tern_for_vim'
+Bundle 'mhinz/vim-signify'
+Bundle 'helino/vim-json'
+Bundle 'pmsorhaindo/syntastic-local-eslint.vim'
 
 filetype plugin indent on
 
@@ -95,6 +99,9 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+set foldmethod=syntax
+
+
 autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " UI Options
@@ -108,6 +115,9 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
     if has('statusline')
         set laststatus=1 
         set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
     endif
 " }
 
@@ -228,8 +238,12 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
 " { Syntastic
 "
     let g:syntastic_cpp_compiler_options = '-std=c++0x'
-    let g:syntastic_python_pylint_args = '-d C0103 -d C0301 -f parseable -r n -i y'
-    let g:syntastic_cpp_config_file = '.clang_complete'
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    "let g:syntastic_auto_loc_list = 1
+    "let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_javascript_checkers = ['eslint']
+    let g:syntastic_python_checkers = ['python', 'pyflakes']
     "let g:syntastic_mode_map =  { 'mode' : 'active',
                                 "\ 'active_filetypes' : [],
                                 "\ 'passive_filetypes' : ['cpp', 'c'] }
@@ -270,10 +284,8 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
 " { Vim-Jedi
     let g:jedi#popup_on_dot = 0
 " }
-" { CtrlP
-    let g:ctrlp_custom_ignore = {
-    \ 'dir' : 'build$',
-    \ }
+" { CtrlP:
+    let g:ctrlp_custom_ignore = 'build\|node_modules'
 " }
 
 """""""""""""""""""""""""""
