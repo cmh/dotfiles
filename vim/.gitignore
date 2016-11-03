@@ -2,3 +2,5 @@
 backups
 temp
 undodir
+plugged
+autoload/plug.vim

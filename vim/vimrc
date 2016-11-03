@@ -1,46 +1,44 @@
 " turn off compatibility with the old vi
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"Non-iteractively load vimplug (TOOD, could probably replace curl with
+"something more ubiqutous
+if empty(glob("~/.vim/autoload/plug.vim"))
+    silent execute '!mkdir -p ~/.vim/plugged'
+    silent execute '!mkdir -p ~/.vim/autoload'
+    silent execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
+"let g:plug_url_format = 'git@github.com:%s.git'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/taglist.vim'
+Plug 'ehamberg/haskellmode-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM'
+Plug 'Twinside/vim-hoogle'
+Plug 'shemerey/vim-project'
+Plug 'vim-syntastic/syntastic'
+Plug 'gotcha/vimpdb'
+Plug 'godlygeek/tabular'
+Plug 'kien/ctrlp.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'rking/ag.vim'
+Plug 'godlygeek/csapprox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'nojhan/liquidprompt'
+Plug 'uarun/vim-protobuf'
+Plug 'alfredodeza/coveragepy.vim'
+Plug 'bling/vim-airline'
+Plug 'wting/rust.vim'
+Plug 'Valloric/YouCompleteMe', {'do' : './install.py'}
+Plug 'rdnetto/YCM-Generator'
+Plug 'ternjs/tern_for_vim'
+Plug 'mhinz/vim-signify'
+Plug 'helino/vim-json'
+Plug 'pmsorhaindo/syntastic-local-eslint.vim'
+call plug#end()
 
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'vim-scripts/taglist.vim.git'
-Bundle 'ehamberg/haskellmode-vim.git'
-Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git'
-Bundle 'Twinside/vim-hoogle.git'
-Bundle 'shemerey/vim-project.git'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'vim-scripts/systemverilog.vim--Kher.git'
-Bundle 'gotcha/vimpdb.git'
-Bundle 'godlygeek/tabular.git'
-Bundle 'vim-scripts/scons.vim'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'vim-scripts/Cpp11-Syntax-Support'
-Bundle 'vim-scripts/STL-Syntax.git'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'rking/ag.vim'
-Bundle 'godlygeek/csapprox.git'
-Bundle 'nanotech/jellybeans.vim.git'
-Bundle 'nojhan/liquidprompt.git'
-Bundle 'fatih/vim-go.git'
-Bundle 'uarun/vim-protobuf.git'
-Bundle 'alfredodeza/coveragepy.vim.git'
-Bundle 'bling/vim-airline'
-Bundle 'wting/rust.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'rdnetto/YCM-Generator'
-Bundle 'ternjs/tern_for_vim'
-Bundle 'mhinz/vim-signify'
-Bundle 'helino/vim-json'
-Bundle 'pmsorhaindo/syntastic-local-eslint.vim'
-
-filetype plugin indent on
 
 " Tab/Indentation
 " {
@@ -237,7 +235,7 @@ autocmd FileType c,cpp,haskell,d,python autocmd BufWritePre <buffer> :call <SID>
 " }
 " { Syntastic
 "
-    let g:syntastic_cpp_compiler_options = '-std=c++0x'
+    let g:syntastic_cpp_compiler_options = '-std=c++14'
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     "let g:syntastic_auto_loc_list = 1
